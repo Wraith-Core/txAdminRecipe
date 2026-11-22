@@ -32,6 +32,10 @@ tasks:
     subpath: resources/[gamemodes]/basic-gamemode
     dest: ./resources/[cfx-default]/[gamemodes]/basic-gamemode
 
+  - action: download_file
+    url: https://raw.githubusercontent.com/Wraith-Core/txAdminRecipe/main/sessionmanager-rdr3/fxmanifest.lua
+    path: ./resources/[cfx-default]/[system]/sessionmanager-rdr3/fxmanifest.lua
+
   # 3. Standalone dependencies (oxmysql & pma-voice)
   - action: download_file
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
