@@ -1,0 +1,172 @@
+$engine: 3
+$onesync: on
+name: Wraith Core
+version: 1.0.0
+author: Wraith Studio
+description: Official open-source RedM roleplay framework by Wraith Studio — powered by w_lib, w_core, w_inventory, and 14 essential gameplay resources.
+
+tasks:
+  # 1. Server configuration files
+  - action: download_file
+    url: https://raw.githubusercontent.com/Wraith-Core/txAdminRecipe/main/server.cfg
+    path: ./server.cfg
+
+  - action: download_file
+    url: https://raw.githubusercontent.com/Wraith-Core/txAdminRecipe/main/permissions.cfg
+    path: ./permissions.cfg
+
+  - action: download_file
+    url: https://raw.githubusercontent.com/Wraith-Core/txAdminRecipe/main/voice.cfg
+    path: ./voice.cfg
+
+  # 2. Cfx.re default RedM resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources/[managers]
+    dest: ./resources/[cfx-default]/[managers]
+
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources/[gamemodes]/basic-gamemode
+    dest: ./resources/[cfx-default]/[gamemodes]/basic-gamemode
+
+  # 3. Standalone dependencies (oxmysql & pma-voice)
+  - action: download_file
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+    path: ./tmp/oxmysql.zip
+  - action: unzip
+    src: ./tmp/oxmysql.zip
+    dest: ./resources/[standalone]
+
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    dest: ./resources/[standalone]/pma-voice
+
+  # 4. Wraith Core — Essential Library & Framework
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_lib
+    ref: main
+    dest: ./resources/[wraith]/w_lib
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_core
+    ref: main
+    dest: ./resources/[wraith]/w_core
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_inventory
+    ref: main
+    dest: ./resources/[wraith]/w_inventory
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_chat
+    ref: main
+    dest: ./resources/[wraith]/w_chat
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_loading
+    ref: main
+    dest: ./resources/[wraith]/w_loading
+
+  # 5. Character, Appearance & HUD
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_creators
+    ref: main
+    dest: ./resources/[wraith]/w_creators
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_clothing
+    ref: main
+    dest: ./resources/[wraith]/w_clothing
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_barber
+    ref: main
+    dest: ./resources/[wraith]/w_barber
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_hud
+    ref: main
+    dest: ./resources/[wraith]/w_hud
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_zones
+    ref: main
+    dest: ./resources/[wraith]/w_zones
+
+  # 6. World, Environment & Security
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_weathersync
+    ref: main
+    dest: ./resources/[wraith]/w_weathersync
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_interiors
+    ref: main
+    dest: ./resources/[wraith]/w_interiors
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_doorlock
+    ref: main
+    dest: ./resources/[wraith]/w_doorlock
+
+  # 7. Economy & Core Roleplay Jobs
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_banking
+    ref: main
+    dest: ./resources/[wraith]/w_banking
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_management
+    ref: main
+    dest: ./resources/[wraith]/w_management
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_policejob
+    ref: main
+    dest: ./resources/[wraith]/w_policejob
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_medic
+    ref: main
+    dest: ./resources/[wraith]/w_medic
+
+  # 8. Database bootstrap
+  - action: connect_database
+
+  - action: query_database
+    file: ./resources/[wraith]/w_core/wcore.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_creators/sql/install.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_clothing/sql/install.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_barber/sql/install.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_hud/sql/w_hud_needs.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_hud/sql/w_hud_satchels.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_hud/sql/w_hud_server.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_hud/sql/w_hud_settings.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_banking/w_banking.sql
+
+  - action: query_database
+    file: ./resources/[wraith]/w_management/w_management.sql
+
+  # 9. Cleanup temporary files
+  - action: remove_path
+    path: ./tmp
