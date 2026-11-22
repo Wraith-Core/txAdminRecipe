@@ -46,20 +46,25 @@ tasks:
     dest: ./resources/[standalone]/pma-voice
 
   # 4. Wraith Core — Essential Library & Framework
-  - action: download_github
-    src: https://github.com/Wraith-Core/w_lib
-    ref: main
-    dest: ./resources/[wraith]/w_lib
+  # w_lib & w_inventory use pre-built GitHub Release ZIPs for fast, reliable downloads
+  - action: download_file
+    url: https://github.com/Wraith-Core/w_lib/releases/latest/download/w_lib.zip
+    path: ./tmp/w_lib.zip
+  - action: unzip
+    src: ./tmp/w_lib.zip
+    dest: ./resources/[wraith]
 
   - action: download_github
     src: https://github.com/Wraith-Core/w_core
     ref: main
     dest: ./resources/[wraith]/w_core
 
-  - action: download_github
-    src: https://github.com/Wraith-Core/w_inventory
-    ref: main
-    dest: ./resources/[wraith]/w_inventory
+  - action: download_file
+    url: https://github.com/Wraith-Core/w_inventory/releases/latest/download/w_inventory.zip
+    path: ./tmp/w_inventory.zip
+  - action: unzip
+    src: ./tmp/w_inventory.zip
+    dest: ./resources/[wraith]
 
   - action: download_github
     src: https://github.com/Wraith-Core/w_chat
