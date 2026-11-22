@@ -80,6 +80,11 @@ tasks:
     ref: main
     dest: ./resources/[wraith]/w_loading
 
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_adminmenu
+    ref: main
+    dest: ./resources/[wraith]/w_adminmenu
+
   # 5. Character, Appearance & HUD
   - action: download_github
     src: https://github.com/Wraith-Core/w_creators
