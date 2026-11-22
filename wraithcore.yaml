@@ -127,6 +127,11 @@ tasks:
     ref: main
     dest: ./resources/[wraith]/w_doorlock
 
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_fasttravel
+    ref: main
+    dest: ./resources/[wraith]/w_fasttravel
+
   # 7. Economy & Core Roleplay Jobs
   - action: download_github
     src: https://github.com/Wraith-Core/w_banking
