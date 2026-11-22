@@ -153,6 +153,26 @@ tasks:
     ref: main
     dest: ./resources/[wraith]/w_medic
 
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_hunting
+    ref: main
+    dest: ./resources/[wraith]/w_hunting
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_fishing
+    ref: main
+    dest: ./resources/[wraith]/w_fishing
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_mining
+    ref: main
+    dest: ./resources/[wraith]/w_mining
+
+  - action: download_github
+    src: https://github.com/Wraith-Core/w_lumberjack
+    ref: main
+    dest: ./resources/[wraith]/w_lumberjack
+
   # 8. Database bootstrap
   - action: connect_database
 

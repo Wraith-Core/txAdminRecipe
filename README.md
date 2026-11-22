@@ -15,14 +15,14 @@ https://raw.githubusercontent.com/Wraith-Core/txAdminRecipe/main/wraithcore.yaml
 4. Configure your MySQL/MariaDB database credentials and Cfx.re license key.
 5. Click **Run Recipe** and start your server!
 
-## What's Included (19 Open-Source Resources)
+## What's Included (23 Open-Source Resources)
 
 | Category | Resources |
 | :--- | :--- |
 | **Core & Library** | [`w_lib`](https://github.com/Wraith-Core/w_lib), [`w_core`](https://github.com/Wraith-Core/w_core), [`w_inventory`](https://github.com/Wraith-Core/w_inventory), [`w_chat`](https://github.com/Wraith-Core/w_chat), [`w_loading`](https://github.com/Wraith-Core/w_loading), [`w_adminmenu`](https://github.com/Wraith-Core/w_adminmenu) |
 | **Character & HUD** | [`w_creators`](https://github.com/Wraith-Core/w_creators), [`w_clothing`](https://github.com/Wraith-Core/w_clothing), [`w_barber`](https://github.com/Wraith-Core/w_barber), [`w_hud`](https://github.com/Wraith-Core/w_hud), [`w_zones`](https://github.com/Wraith-Core/w_zones) |
 | **World & Security** | [`w_weathersync`](https://github.com/Wraith-Core/w_weathersync), [`w_interiors`](https://github.com/Wraith-Core/w_interiors), [`w_doorlock`](https://github.com/Wraith-Core/w_doorlock), [`w_fasttravel`](https://github.com/Wraith-Core/w_fasttravel) |
-| **Economy & Jobs** | [`w_banking`](https://github.com/Wraith-Core/w_banking), [`w_management`](https://github.com/Wraith-Core/w_management), [`w_policejob`](https://github.com/Wraith-Core/w_policejob), [`w_medic`](https://github.com/Wraith-Core/w_medic) |
+| **Economy & Jobs** | [`w_banking`](https://github.com/Wraith-Core/w_banking), [`w_management`](https://github.com/Wraith-Core/w_management), [`w_policejob`](https://github.com/Wraith-Core/w_policejob), [`w_medic`](https://github.com/Wraith-Core/w_medic), [`w_hunting`](https://github.com/Wraith-Core/w_hunting), [`w_fishing`](https://github.com/Wraith-Core/w_fishing), [`w_mining`](https://github.com/Wraith-Core/w_mining), [`w_lumberjack`](https://github.com/Wraith-Core/w_lumberjack) |
 | **Dependencies** | [`oxmysql`](https://github.com/overextended/oxmysql), [`pma-voice`](https://github.com/AvarianKnight/pma-voice) |
 
 - **Shops:** Uses `w_inventory`'s built-in shop system (General Stores enabled out of the box via `setr w_inventory:defaultShops 1`).
